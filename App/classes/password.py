@@ -19,5 +19,4 @@ class Password:
         passTab = list(choice([elt for type_password in tabMotif for elt in ALL_TYPES[type_password]])
                        for i in range(int(self.password_length)))
         shuffle(passTab)
-        print(passTab)
         return ''.join(passTab)

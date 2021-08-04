@@ -1,1 +1,1 @@
-from . import password
+from . import password, crack
