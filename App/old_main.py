@@ -44,12 +44,7 @@ class Window():
 
 if __name__ == '__main__':
     app = QtWidgets.QApplication([])
-    call = uic.loadUi("ui/app.ui")
+    call = uic.loadUi("ui/main.ui")
     win = Window()
-    call.pushButton.clicked.connect(win.print_values)
-    call.checkBox.clicked.connect(win.checkbox_touched)
-    call.checkBox_2.clicked.connect(win.checkbox_2_touched)
-    call.checkBox_3.clicked.connect(win.checkbox_3_touched)
-    call.checkBox_4.clicked.connect(win.checkbox_4_touched)
     call.show()
     app.exec()

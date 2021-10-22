@@ -11,34 +11,33 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 import sys
 from ui.password_ui import PasswordWidget
+from ui.crack_ui import CrackWidget
 
 
 class AppMainWindow(object):
     def setupUi(self, MainWindow):
+
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(800, 600)
-        self.window2 = PasswordWidget()
-        self.genpassword = QtWidgets.QMainWindow()
-        self.window2.setupUi(self.genpassword)
-
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
+
         self.pushButton = QtWidgets.QPushButton(self.centralwidget)
         self.pushButton.setGeometry(QtCore.QRect(20, 360, 301, 51))
         self.pushButton.setStyleSheet("\n"
                                       "QPushButton{\n"
-
                                       "  width: 200px;\n"
                                       "  height: 40px;\n"
                                       "  line-height: 40px;\n"
                                       "  font-size: 18px;\n"
-                                      "  font-family: sans-serif;\n"
+                                      "  font-family:sans-serif;\n"
                                       "  text-decoration: none;\n"
                                       "  color: #333;\n"
                                       "  border: 2px solid #333;\n"
                                       "  letter-spacing: 2px;\n"
                                       "  text-align: center;\n"
                                       "  position: relative;\n"
+                                      "  border-radius:10px;\n"
                                       "}\n"
                                       "\n"
                                       "\n"
@@ -63,7 +62,7 @@ class AppMainWindow(object):
                                       "}")
         self.pushButton.setObjectName("pushButton")
         self.pushButton_2 = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton_2.setGeometry(QtCore.QRect(340, 360, 291, 51))
+        self.pushButton_2.setGeometry(QtCore.QRect(410, 360, 291, 51))
         self.pushButton_2.setStyleSheet("\n"
                                         "QPushButton{\n"
                                         "  width: 200px;\n"
@@ -77,6 +76,7 @@ class AppMainWindow(object):
                                         "  letter-spacing: 2px;\n"
                                         "  text-align: center;\n"
                                         "  position: relative;\n"
+                                        "  border-radius:10px;\n"
                                         "}\n"
                                         "\n"
                                         "\n"
@@ -101,21 +101,35 @@ class AppMainWindow(object):
                                         "}")
         self.pushButton_2.setObjectName("pushButton_2")
         self.label = QtWidgets.QLabel(self.centralwidget)
-        self.label.setGeometry(QtCore.QRect(100, 100, 491, 41))
-        self.label.setStyleSheet("font: 16pt \"Lucida Calligraphy\";\n"
+        self.label.setGeometry(QtCore.QRect(100, 60, 571, 41))
+        self.label.setStyleSheet("font: 20pt \"Lucida Calligraphy\";\n"
                                  "\n"
-                                 "color:rgb(138, 255, 245)")
+                                 "")
         self.label.setObjectName("label")
+        self.label_2 = QtWidgets.QLabel(self.centralwidget)
+        self.label_2.setGeometry(QtCore.QRect(280, 110, 201, 211))
+        self.label_2.setObjectName("label_2")
+        pixMap = QtGui.QPixmap("probleme.png")
+        self.label_2.setPixmap(pixMap)
+
         MainWindow.setCentralWidget(self.centralwidget)
+        self.statusbar = QtWidgets.QStatusBar(MainWindow)
+        self.statusbar.setObjectName("statusbar")
+        MainWindow.setStatusBar(self.statusbar)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 20))
         self.menubar.setObjectName("menubar")
         MainWindow.setMenuBar(self.menubar)
-        self.statusbar = QtWidgets.QStatusBar(MainWindow)
-        self.statusbar.setObjectName("statusbar")
-        MainWindow.setStatusBar(self.statusbar)
+
+        self.window2 = PasswordWidget()
+        self.genpassword = QtWidgets.QMainWindow()
+        self.window2.setupUi(self.genpassword)
         self.pushButton.clicked.connect(self.show_gen_password)
-        # self.checkBox_2.clicked.connect(self.checkbox_2_touched)
+
+        self.window3 = CrackWidget()
+        self.crack_password_ui = QtWidgets.QMainWindow()
+        self.window3.setupUi(self.crack_password_ui)
+        self.pushButton_2.clicked.connect(self.show_crack_widget)
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
@@ -132,6 +146,9 @@ class AppMainWindow(object):
 
     def show_gen_password(self):
         self.genpassword.show()
+
+    def show_crack_widget(self):
+        self.crack_password_ui.show()
 
 
 def main():

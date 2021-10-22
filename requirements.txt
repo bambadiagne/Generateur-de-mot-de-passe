@@ -1,5 +1,8 @@
+autopep8==1.5.7
 click==7.1.2
+pycodestyle==2.8.0
 PyQt5==5.15.1
 PyQt5-sip==12.8.1
 pyqt5-tools==5.15.1.1.7.4
 python-dotenv==0.14.0
+toml==0.10.2
