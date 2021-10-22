@@ -1,6 +1,5 @@
 from random import sample, choice, shuffle
-ALL_TYPES = {'numeric': list('0123456789'), 'alphalower': [chr(i) for i in range(97, 123)], 'alphaupper': [chr(i) for i in range(65, 91)], 'specialschars': [
-    '[', '~', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '_', '=', '+', '[', ']', '{', '}', ';', ':', ',', '.', '<', '>', '/', '?', '|', ']'], 'alphanum': 1}
+from .constantes import ALL_TYPES
 
 
 class Password:
