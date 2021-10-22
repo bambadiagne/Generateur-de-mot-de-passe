@@ -31,7 +31,7 @@ QPushButton{
   height: 40px;
   line-height: 40px;
   font-size: 18px;
-  font-family: sans-serif;
+  font-family:sans-serif;
   text-decoration: none;
   color: #333;
   border: 2px solid #333;
@@ -39,6 +39,7 @@ QPushButton{
   text-align: center;
   position: relative;
   transition: all .35s;
+  border-radius:10px;
 }
 
 
@@ -70,7 +71,7 @@ QPushButton::hover::after{
    <widget class="QPushButton" name="pushButton_2">
     <property name="geometry">
      <rect>
-      <x>340</x>
+      <x>410</x>
       <y>360</y>
       <width>291</width>
       <height>51</height>
@@ -92,6 +93,7 @@ QPushButton{
   text-align: center;
   position: relative;
   transition: all .35s;
+  border-radius:10px;
 }
 
 
@@ -124,21 +126,35 @@ QPushButton::hover::after{
     <property name="geometry">
      <rect>
       <x>100</x>
-      <y>100</y>
-      <width>491</width>
+      <y>60</y>
+      <width>571</width>
       <height>41</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">font: 16pt &quot;Lucida Calligraphy&quot;;
+     <string notr="true">font: 20pt &quot;Lucida Calligraphy&quot;;
 
-color:rgb(138, 255, 245)</string>
+</string>
     </property>
     <property name="text">
      <string>Application de gestion de mots de passe</string>
     </property>
    </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>110</y>
+      <width>201</width>
+      <height>211</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/newPrefix/probleme.PNG&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
   </widget>
+  <widget class="QStatusBar" name="statusbar"/>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
@@ -149,8 +165,9 @@ color:rgb(138, 255, 245)</string>
     </rect>
    </property>
   </widget>
-  <widget class="QStatusBar" name="statusbar"/>
  </widget>
- <resources/>
+ <resources>
+  <include location="../img.qrc"/>
+ </resources>
  <connections/>
 </ui>
