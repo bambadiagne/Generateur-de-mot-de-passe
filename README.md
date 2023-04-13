@@ -1,6 +1,10 @@
 ### Password generator and cracker(dictionnary attack and brute-force)
 Desktop application made with PyQt (python library).
-2 parts:<br>
+
+
+[![Made-In-Senegal](https://github.com/GalsenDev221/made.in.senegal/blob/master/assets/badge.svg)](https://github.com/GalsenDev221/made.in.senegal)
+
+two parts:<br>
 _ 1st Part: Password generator with different formats that can be used to check regex or for your secret keys<br>
 
 
